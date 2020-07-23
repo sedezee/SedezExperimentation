@@ -35,6 +35,12 @@ public class UIRegister {
         uiObjList.add(new UIObject(name, "", func)); 
     }
 
+    /**
+     * @param name 
+     *      The name of the method to retrieve. 
+     * @return
+     *      The UIObject associated with the method name.
+     */     
     private UIObject getMethod(String name) {
         name = name.toUpperCase(); 
         for (UIObject uiMethod : uiObjList) {
@@ -45,6 +51,12 @@ public class UIRegister {
         return null; 
     }
 
+    /**
+     * @param name
+     *      The name of the method to run. 
+     * @return
+     *      True if the method successfully ran, false if the method didn't. 
+     */
     private boolean runMethod(String name) {
         try {
             this.getMethod(name).getFunc().accept(scanner); 
@@ -54,6 +66,10 @@ public class UIRegister {
         }
     }
 
+    /**
+     * @return
+     *      Returns the descriptions of all of the UI objects. 
+     */
     private String[] getDescriptions() {
         String[] desc = new String[uiObjList.size()]; 
         int i = 0; 

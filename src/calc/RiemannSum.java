@@ -1,4 +1,4 @@
-package src.calc; 
+package calc; 
 
 public class RiemannSum {
     /* RIEMAN MIDPOINT SUM

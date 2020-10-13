@@ -1,8 +1,6 @@
-package src.calc;
+package calc;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TwoVarDerive {
     /*
@@ -15,7 +13,7 @@ public class TwoVarDerive {
     private String prime; 
     ArrayList<String> vars;
     ArrayList<String> operands; 
-    private final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))|((?<=%2$s)|(?=%2$s))";
+    private final static String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))|((?<=%2$s)|(?=%2$s))";
 
     /**
      * Derives a two variable equation 

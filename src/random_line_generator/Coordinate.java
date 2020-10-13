@@ -1,4 +1,4 @@
-package src.random_line_generator;
+package random_line_generator;
 
 import java.util.Random;
 

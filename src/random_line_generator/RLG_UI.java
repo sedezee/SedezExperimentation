@@ -1,9 +1,9 @@
-package src.random_line_generator;
+package random_line_generator;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.CancellationException;
-import src.user_interface.UIRegister; 
+import user_interface.UIRegister; 
 
 public class RLG_UI {
     private UIRegister uiRegister; 

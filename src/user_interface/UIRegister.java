@@ -1,4 +1,4 @@
-package src.user_interface;
+package user_interface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -161,6 +161,13 @@ public class UIRegister {
 
         public String toString() {
             return name + ": " + description; 
+        }
+
+        public boolean equals(UIObject other) {
+            return (this.getName() == other.getName()) && 
+            (this.getFunc() == other.getFunc()) && 
+            (this.getDescription() == other.getDescription()) && 
+            (this.getInfo() == other.getInfo()); 
         }
     }
 }

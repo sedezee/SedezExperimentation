@@ -1,9 +1,20 @@
 package sealed_classes;
 
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String... args) {
-        Rectangle rectangle = new Rectangle(); // This will run without problem 
+    public static String[] solution(String s) {
+        String arr[] = new String[(int)Math.ceil((double)s.length()/2)]; 
+        for (int i = 0; i < s.length(); i+=2) { 
+            arr[i/2] = s.substring(i, i + 1); 
+        }
         
-        Polygon polygon = new Polygon(); // This will throw an error 
+        if (s.length() % 2 != 0) { 
+            arr[arr.length -1] = s.substring(s.length() - 1) + "_"; 
+            
+        }
+        
+        return arr; 
     }
+ 
 }

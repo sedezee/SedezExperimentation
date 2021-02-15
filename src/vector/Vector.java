@@ -11,6 +11,7 @@ import java.util.ArrayList;
 class Vector{
     private double[] vector; 
     private final Logger logger = Logger.getGlobal(); 
+    
     /**
      * Create an instance of a mathematical vector
      * @param args the coordinates of the vector.

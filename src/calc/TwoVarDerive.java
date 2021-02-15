@@ -1,6 +1,7 @@
 package calc;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TwoVarDerive {
     /*
@@ -13,7 +14,7 @@ public class TwoVarDerive {
     private String prime; 
     ArrayList<String> vars;
     ArrayList<String> operands; 
-    private final static String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))|((?<=%2$s)|(?=%2$s))";
+    private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))|((?<=%2$s)|(?=%2$s))";
 
     /**
      * Derives a two variable equation 
@@ -48,8 +49,8 @@ public class TwoVarDerive {
         return new String[] {firstVar, secondVar}; 
     }
     
-    public ArrayList<String> getEquation() {
-        ArrayList<String> equation = new ArrayList<String>(); 
+    public List<String> getEquation() {
+        ArrayList<String> equation = new ArrayList<>(); 
         for (int i = 0; i < vars.size(); i++) {
             equation.add(vars.get(i)); 
             equation.add(operands.get(i)); 
@@ -57,6 +58,10 @@ public class TwoVarDerive {
         return equation; 
     }
 
+    /**
+     * Derive the full equation
+     * @return the equation in string format
+     */
     public String deriveFull() {
         String res  = ""; 
         for(int i = 0; i < vars.size(); i++) {
@@ -67,6 +72,11 @@ public class TwoVarDerive {
         return res; 
     }
     
+    /**
+     * Dervice the provided equation 
+     * @param equation the equation to derive 
+     * @return the derived equation 
+     */
     public String derive(String equation) {
         String res = ""; 
         if (equation.contains("/"))
@@ -79,7 +89,11 @@ public class TwoVarDerive {
         return res; 
     }
 
-    
+    /**
+     * Perform the power rule 
+     * @param equation the equation to perform the rule on 
+     * @return the result of the power rule
+     */
     private String powerRule(String equation) {
         String[] vars = equation.split(String.format(WITH_DELIMITER, firstVar, secondVar)); 
         int constant = 1; 
@@ -130,6 +144,11 @@ public class TwoVarDerive {
         return res; 
     }
 
+    /**
+     * Perform the quotient rule 
+     * @param equation the equation to perform the quotient rule on 
+     * @return the result of the quotient rule
+     */
     private String quotientRule(String equation) {
         String res;  
         String[] vars = equation.split("/"); 
@@ -152,6 +171,11 @@ public class TwoVarDerive {
         return res; 
     }
 
+    /**
+     * Performs the chain rule
+     * @param equation the equation to perform the chain rule on 
+     * @return the result of the chain rule 
+     */
     private String chainRule(String equation) {
         String[] vars = equation.split(String.format(WITH_DELIMITER, firstVar, secondVar)); 
         String[] resArr = new String[2]; 
@@ -181,9 +205,7 @@ public class TwoVarDerive {
             resArr[i] = derive(equations[i]); 
         }
 
-        String res = String.format("(%s * %s) + (%s * %s)", 
+        return String.format("(%s * %s) + (%s * %s)", 
             resArr[0], equations[1], resArr[1], equations[0]); 
-        
-        return res; 
-    }
+        }
 }

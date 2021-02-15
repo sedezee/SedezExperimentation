@@ -5,10 +5,14 @@ import java.util.Scanner;
 import java.util.concurrent.CancellationException;
 import user_interface.UIRegister; 
 
+/**
+ * An class largely used to show off uiRegister. 
+ * Generates lines based on entered parameters. 
+ */
 public class RLG_UI {
     private UIRegister uiRegister; 
     private Scanner scanner; 
-    private ArrayList<Line> lineList = new ArrayList<Line>();
+    private ArrayList<Line> lineList = new ArrayList<>();
     
     public RLG_UI() {
         uiRegister = new UIRegister(); 
@@ -16,7 +20,7 @@ public class RLG_UI {
     }
 
     private void exitCheck(String exit) {
-        if(exit.toUpperCase().equals("EXIT")){
+        if(exit.equalsIgnoreCase("EXIT")){
             scanner.close(); 
             throw new CancellationException(); 
         }
@@ -79,7 +83,7 @@ public class RLG_UI {
             }
         }
         for(int i = 0; i < lineNum; i++) {
-            Line l = Line.random(true, boundArr);
+            Line l = Line.random(boundArr[0], boundArr[1], boundArr[2], boundArr[3], true);
             System.out.println(l.toString()); 
             if (save) 
                 lineList.add(l); 
@@ -106,7 +110,7 @@ public class RLG_UI {
             exitCheck(lineStr); 
             if(lineStr.equals("RANDOM")) {
                 double[] arrBounds = bounds(scanner); 
-                Line l = Line.random(quarterBounding, arrBounds); 
+                Line l = Line.random(arrBounds[0], arrBounds[1], arrBounds[2], arrBounds[3], quarterBounding); 
                 System.out.println(l); 
                 lineList.add(l); 
                 break;

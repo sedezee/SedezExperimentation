@@ -1,25 +1,13 @@
 package calc; 
 
 public class RiemannSum {
-    /* RIEMAN MIDPOINT SUM
-    subintervals need to be found first. 
-    i.e. riemann midpoint sum from 0-6, with three subintervals 
-    will use the points (1, 4), (3, 0), (5, 4)
-    with a table structure like 
-    {{1, 3, 5}, {4, 0, 4}}
-
-    EVERY OTHER SUM
-    punch in the numbers. 
-    (0, 4), (4, 3), (5, 4) goes in as such: 
-    {{0, 4, 5}, {4, 3, 4}}
-    */
-    
-    double[][] table; 
-    public RiemannSum(double[][] table) {
-        this.table = table; 
-    }
-
-    public double rightRiemannSum() {
+    /**
+     * Calculate a righthand Riemann sum 
+     * @param table the table represented in the form of a 2D array
+     * such as (1, 4), (3, 0), (5, 4) as {{0, 4, 5}, {4, 3, 4}}
+     * @return the result of the sum 
+     */
+    public double rightRiemannSum(double[][] table) {
         double total = 0; 
         for(int i = 1; i < table[0].length; i++) {
             double width = table[0][i] - table[0][i-1]; 
@@ -29,7 +17,13 @@ public class RiemannSum {
         return total; 
     }
 
-    public double leftRiemannSum() {
+     /**
+     * Calculate a lefthand Riemann sum 
+     * @param table the table represented in the form of a 2D array
+     * such as (1, 4), (3, 0), (5, 4) as {{0, 4, 5}, {4, 3, 4}}
+     * @return the result of the sum 
+     */
+    public double leftRiemannSum(double[][] table) {
         double total = 0; 
         String resStr = ""; 
         for(int i = 1; i < table[0].length; i++) {
@@ -42,7 +36,13 @@ public class RiemannSum {
         return total; 
     }
 
-    public double trapezoidalRiemannSum() {
+      /**
+     * Calculate a trapezoidal Riemann sum 
+     * @param table the table represented in the form of a 2D array
+     * such as (1, 4), (3, 0), (5, 4) as {{0, 4, 5}, {4, 3, 4}}
+     * @return the result of the sum 
+     */
+    public double trapezoidalRiemannSum(double[][] table) {
         double total = 0; 
         for(int i = 1; i < table[0].length; i++) {
             double width = table[0][i] - table[0][i-1]; 
@@ -52,8 +52,15 @@ public class RiemannSum {
         }
         return total; 
     }
-
-    public double midpointRiemannSum() {
+    
+    /** 
+     * Calculates a midpoint Riemann sum 
+     * @param table subintervalas must be found first. 
+     * Table should be represented in the form of a 2D array 
+     * such as (1, 4), (3, 0), (5, 4) as {{1, 3, 5}, {4, 0, 4}}
+     * @return the result of the sum 
+    */
+    public double midpointRiemannSum(double[][] table) {
         double total = 0; 
         double width = table[0][1] - table[0][0];
         for(int i = 0; i < table[0].length; i++) {

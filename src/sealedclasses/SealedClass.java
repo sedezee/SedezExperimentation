@@ -1,4 +1,4 @@
-package sealed_classes;
+package sealedclasses;
 
 import java.util.Arrays;
 import java.util.List;

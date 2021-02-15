@@ -1,4 +1,4 @@
-package token_stream;
+package tokenstream;
 
 import java.io.FileNotFoundException;
 

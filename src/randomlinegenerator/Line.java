@@ -1,4 +1,4 @@
-package random_line_generator; 
+package randomlinegenerator; 
 
 /**
  * Basic implementation of a mathematical line class

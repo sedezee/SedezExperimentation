@@ -1,4 +1,4 @@
-package sealed_classes;
+package sealedclasses;
 
 /**
  * A valid example implementation of the sealed class Shape. 

@@ -1,4 +1,4 @@
-package sealed_classes; 
+package sealedclasses; 
 
 /**
  * Specialized SealedClassException designed for use with SealedClass.java.

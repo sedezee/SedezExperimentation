@@ -1,4 +1,4 @@
-package sealed_classes;
+package sealedclasses;
 
 /**
  * Basic implementation of a shape class for demonstrating the 

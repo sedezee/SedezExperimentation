@@ -1,9 +1,10 @@
-package random_line_generator;
+package randomlinegenerator;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.CancellationException;
-import user_interface.UIRegister; 
+
+import userinterface.UIRegister; 
 
 /**
  * An class largely used to show off uiRegister. 

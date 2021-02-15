@@ -4,7 +4,7 @@ A collection of Java projects that aren't big enough to warrant their own reposi
 ## What does it contain? 
 
 ### [Calc](https://github.com/sedezee/SedezExperimentation/tree/master/src/calc) 
-A collection of calculous calculators. One for Riemann sums, and one for two variable derivatives. 
+A collection of calculus calculators. One for Riemann sums, and one for two variable derivatives. 
 
 ### [Random Line Generator (randomlinegenerator)](https://github.com/sedezee/SedezExperimentation/tree/master/src/randomlinegenerator)
 A random line generator with the mathematical classes Coordinate and Line. Used largely as a demonstration for the userinterface package. 
